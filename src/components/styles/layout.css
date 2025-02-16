@@ -1,0 +1,164 @@
+/*inicio nav*/
+.navbar {
+    width: 100%;
+    height: 70px; /* Ajusta la altura según sea necesario */
+    position: fixed; /* Hace que la barra de navegación quede fija */
+    top: 0;
+    left: 0;
+    background-color: white; /* Asegura que tenga fondo y no sea transparente */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px 0 20px;
+    z-index: 1000; /* Para que esté sobre otros elementos */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Agrega una ligera sombra */ 
+    transition: opacity 0.5s ease-in-out;
+}
+
+.navbar.hidden {
+    opacity: 0;
+    pointer-events: none; /* Evita que la navbar sea interactuable cuando está oculta */
+}
+
+.navbar .logo {
+    height: 50px;
+   
+}
+.navbar .logo:hover {  
+    transform: scale(1.1);
+}
+.menu-items {
+    display: none; /* Oculto en móvil */
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    letter-spacing: 4px;
+    line-height: 5rem;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    list-style: none;
+}  
+.menu-items.open {
+    display: flex;
+}
+
+.menu-items ul {
+    list-style: none;
+    padding: 0;
+}
+.menu-items ul li {
+    padding: 15px;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.navbar ul li a:hover {
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.navbar .toggle_btn {
+    display: flex;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #363636;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1100;
+    margin-top: 5px;
+}
+
+.navbar.hidden + .toggle_btn {
+    display: block; /* Muestra el botón cuando la navbar está oculta */
+}
+/* Estilo para el botón que aparece cuando la navbar está oculta */
+.toggle_btn_fixed {
+    display: flex;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: white;
+    color: black;
+    padding: 5px;
+    border: solid 1px #363636;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1100;
+}
+.toggle_btn_fixed i {
+    font-size: 1.5rem;
+}
+.toggle_btn_fixed:hover {
+    background: #333;
+}
+
+
+@media (min-width: 1024px) {
+        .menu-items {
+            display: flex;
+            flex-direction: row;
+            position: static;
+            width: auto;
+            height: auto;
+            background: none;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            margin-right: 40px;
+        }
+    
+        .menu-items ul {
+            display: flex;
+            gap: 20px;
+        }
+    
+        .menu-items ul li {
+            padding: 10px 15px;
+        }
+    
+        .nav .toggle_btn {
+            display: none; /* 🔥 Ocultar botón hamburguesa */
+        }
+
+        .navbar .logo {
+            margin-bottom: 20px;
+        }
+}
+
+
+/*fin nav*/
+
+
+/*inicio footer*/
+footer {
+    background-color: black;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+footer .social {
+    text-align: center;
+   
+}
+footer .social p {
+    color: white;
+    opacity: 0.65;
+    margin-top: 15px;
+}
+  footer .social p:hover {
+    opacity: 1;
+} 
+/*fin footer*/
