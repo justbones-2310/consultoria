@@ -210,13 +210,13 @@
 .container .text-1 h2 {
     text-transform: uppercase;
     letter-spacing: 4px;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
 }
 .container .text-1 p{
     font-size: 16px;
     letter-spacing: 2px;
     line-height: 2;
-    padding: 0 10px;  
+    padding: 0 20px;  
 }
 .container .flip-container2 .back2 {
     display: flex;
@@ -727,7 +727,6 @@
     
     .us .container .text-1 h2 {
         font-size: 28px;
-        margin-top: 10px;
     }
 
     .us .container .text-1 p {
