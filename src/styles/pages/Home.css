@@ -727,6 +727,7 @@
     
     .us .container .text-1 h2 {
         font-size: 28px;
+        margin-top: 10px;
     }
 
     .us .container .text-1 p {
@@ -993,7 +994,6 @@
 .us .container .text-1 h2 {
     text-transform: uppercase;
     margin-bottom: 20px;
-    margin-top: 40px;
     letter-spacing: 4px;
 }
 .us .container .text-1 p{
