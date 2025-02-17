@@ -190,7 +190,7 @@
 .container .flip-container2 .back2 {
     position: absolute;
     width: 100%;
-    height: auto;
+    height: 100%;
     backface-visibility: hidden;
     top: 0;
     left: 0;
