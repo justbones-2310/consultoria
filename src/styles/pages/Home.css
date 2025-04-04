@@ -57,7 +57,7 @@
     font-weight: 400;
 }
 .button {  
-    margin-top: 200px;
+    margin-top: 150px;
     margin-left: 40px;
 }
 .button1 {
@@ -364,7 +364,8 @@
 }
 .container3 .text-4 .principal{
     text-transform: uppercase;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     letter-spacing: 2px;
     font-weight: 700;
     text-align: center;
@@ -513,25 +514,34 @@
     background-color: whitesmoke;
     padding: 20px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.tables.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .tables .titulo {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
-.tables .text-3 p {
-    font-size: 24px;
+.tables .titulo.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.tables .head{
+    width: 90%;
     text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 2px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     text-align: center;
-    padding: 0 15px;
+    letter-spacing: 4px;
 }
-
 .tables .columns {
     display: flex;
     flex-direction: column;
@@ -542,18 +552,33 @@
 
 .tables .columns .textos {
     width: 90%;
+    max-width: 600px;
     padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
+.tables .columns .textos.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.tables .textos:hover {
+    transform: translateY(-5px); /* Eleva el cuadro al pasar el mouse */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
 .tables .columns .textos h2 {
-    margin-bottom: 15px;
+    margin: 10px;
+    font-size: 20px;
 }
 
 .tables .columns .textos p {
     letter-spacing: 1.5px;
+    font-size: 16px;
     text-align: center;
 }
-
 /*fin mesas de trabajo*/
 
 /*inicio contacto*/
@@ -806,6 +831,7 @@
     .container3 .columns .textos p {
         text-align: left;
         letter-spacing: 1;
+        margin-left: 10px;
     }
     /*fin analisis sectorial*/
 
@@ -832,12 +858,16 @@
 
     /*tables*/
     .tables {
-        padding: 30px;
+        padding: 40px;
     }
 
-    .tables .text-3 p {
-        font-size: 28px;
-        letter-spacing: 3px;
+    .tables .head{
+        width: 90%;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        text-align: center;
+        align-items: center;
+        letter-spacing: 4px;
     }
 
     .tables .columns {
@@ -847,6 +877,12 @@
 
     .tables .columns .textos {
         width: 80%;
+        border-radius: 15px; /* Bordes redondeados */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    }
+    .tables .textos:hover {
+        transform: translateY(-5px); /* Eleva el cuadro al pasar el mouse */
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
     }
     /*tables*/
 
@@ -1047,6 +1083,9 @@
     .container3 .columns .textos {
         padding: 30px;
     }
+    .container3 p {
+        margin-left: 10px;
+    }
 
     /*fin analisis sectorial*/
 
@@ -1173,6 +1212,15 @@
         padding: 50px;
     }
 
+    .tables .head{
+        width: 90%;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 4px;
+        margin-bottom: 100px;
+    }
+
     .tables .columns {
         flex-direction: row;
         justify-content: center;
@@ -1182,12 +1230,16 @@
     .tables .columns .textos {
         width: 40%;
         max-width: 500px;
+        padding: 40px;
+        border-radius: 15px; /* Bordes redondeados */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
     }
 
-    .tables .text-3 p {
-        font-size: 32px;
-        letter-spacing: 5px;
+    .tables .textos:hover {
+        transform: translateY(-5px); /* Eleva el cuadro al pasar el mouse */
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
     }
+    
     /*mesas*/
 
     /**/

@@ -84,6 +84,24 @@ const Home = (props) => {
         }
     };
 
+    useEffect(() => {
+        const elementsToObserve = document.querySelectorAll(
+            '.tables, .tables .titulo, .tables .columns .textos'
+        );
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        elementsToObserve.forEach(element => observer.observe(element));
+
+        return () => elementsToObserve.forEach(element => observer.unobserve(element));
+    }, []);
+
     const handleEmailClick = (event) => {
         event.preventDefault(); // Evita que el enlace navegue directamente
         const email = "jars@gmail.com";
@@ -97,6 +115,20 @@ const Home = (props) => {
         );
     };
 
+    const data = [
+        {
+            titulo: "Charlas Ejecutivas",
+            descripcion: "Realizamos sesiones interactivas donde expertos comparten conocimiento sobre tendencias del mercado y análisis de datos. Esto enriquece la toma de decisiones."
+        },
+        {
+            titulo: "Mesas de Diálogo",
+            descripcion: "Fomentamos el intercambio de ideas entre líderes de diversas industrias. Las mesas de trabajo establecen un espacio para discutir desafíos y soluciones innovadoras."
+        },
+        {
+            titulo: "Formación Continua",
+            descripcion: "Ofrecemos capacitación especializada para empresas, enfocada en áreas críticas como análisis de datos, permitiendo que el personal se mantenga actualizado en mejores prácticas."
+        }
+    ];
 
     return (
         <div className='home'>
@@ -344,47 +376,17 @@ const Home = (props) => {
             </div>
 
 
-
-            <div className='tables'>
-
-                <h2 className='titulo'> Mesas de trabajo</h2>
-
-
-                <div className='columns'>
-                    <div className='textos'>
-
-                        <h2> Charlas Ejecutivas</h2>
-                        <p>
-                            Realizamos sesiones interactivas donde expertos comparten conocimiento
-                            sobre tendencias del mercado y análisis de datos.
-                            Esto enriquece la toma de decisiones.
-                        </p>
-
-                    </div>
-
-                    <div className='textos'>
-
-                        <h2> Mesas de Diálogo</h2>
-                        <p>
-                            Fomentamos el intercambio de ideas entre líderes de diversas industrias.
-                            Las mesas de trabajo establecen un espacio para discutir desafíos y soluciones innovadoras.
-                        </p>
-
-                    </div>
-
-                    <div className='textos'>
-
-                        <h2> Formación Continua </h2>
-                        <p>
-                            Ofrecemos capacitación especializada para empresas, enfocado en áreas
-                            críticas como análisis de datos, permitiendo que el personal se mantenga
-                            actualizado en mejores prácticas
-                        </p>
-
-                    </div>
-
+            {/* Nueva sección: Mesas de Trabajo */}
+            <div className="tables">
+                <h2 className="head">Mesas de trabajo pensadas <br></br>para que alcancemos juntos tus objetivos </h2>
+                <div className="columns">
+                    {data.map((item, index) => (
+                        <div key={index} className="textos">
+                            <h2>{item.titulo}</h2>
+                            <p>{item.descripcion}</p>
+                        </div>
+                    ))}
                 </div>
-
             </div>
 
 
