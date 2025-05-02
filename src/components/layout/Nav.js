@@ -44,7 +44,7 @@ const Nav = () => {
                 </NavLink>
 
                 {/* Menú principal */}
-                <ul className={`menu-items ${isOpen ? 'open' : ''}`}>
+                <ul className={`menu-items ${isOpen ? 'open' : ''}`} >
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#insights">Insights</a></li>
                     <li><a href="#services">Servicios</a></li>

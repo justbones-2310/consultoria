@@ -227,7 +227,7 @@ const Home = (props) => {
             <div className='comment'>
 
                 <h2>
-                    Dentro de tu empresa existen grandes oportunidades
+                    Dentro de tu empresa existen grandes oportunidades, pero no siempre son fáciles de identificar
                 </h2>
 
             </div>
