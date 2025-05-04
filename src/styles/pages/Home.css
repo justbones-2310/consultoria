@@ -30,7 +30,7 @@
 .bg-image2{
     flex: 1;
     width: 50vw; /* Cada imagen ocupa el 50% del ancho del viewport */
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
     background-size: cover;
 }
@@ -669,8 +669,8 @@
         padding: 10px 20px;
     }
     .title {
-        margin-top: 20px;
-        margin-left: 40px;
+        margin-top: 70px;
+        margin-left: 10px;
     
     }
     .title h1 {
@@ -680,73 +680,71 @@
     }
     .button {  
         margin-top: 200px;
-        margin-left: 40px;
+        margin-left: 10px;
     }
 
     /*inicio nosotros*/
     .us {
         flex-direction: row; /* Cambia a fila en tablets */
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
+        width: 100%;
+        height: 75vh;
+        gap: 1rem;
     }
-
-    .item {
-        width: 50vw;
-        height: 100vh;
-        padding: 0 0 0 20px;
+    .item, 
+    .container {
+        width: 50%;
+        height: 100%;
+        padding:  0;
     }
-
+    .flip-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }    
     .item .back {
         width: 50vw;
-        height: 100vh;
+        height: 100%;
         color: #fff; /* Texto claro para contraste */
         transform: rotateY(180deg) translateZ(0); /* Prepara la cara trasera para aparecer al girar */
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        z-index: 1;
-      }
+    }
     .item .back img {
         position: absolute;
-        flex: 1;
         width: 50vw;
-        height: 100vh;
+        height: 100%;
         object-fit: cover;
         background-size: cover;
         object-fit: cover;
-        padding: 0 0 0 40px;
     }
     .item .back h2{
         position: relative;
         text-transform: uppercase;
-        margin-left: 60px;
-        margin-top: 60%;
+        margin-top: 80%;
+        margin-left: 40px;
       }
 
     .item .front img, 
     .item .back img {
         width: 50vw;
-        height: 100vh;
-    }
-
-    .item .front img{
-        padding: 0 0 0 40px;
-    }
-
-    .container {
-        width: 50vw;
         height: 100%;
-        padding: 0 40px 0 0;
+        padding: 0 0 0 50px;
     }
-    
+    .container,
+    .container .back2 {
+        padding: 0 50px 0 0;
+    }
     .us .container .text-1 h2 {
-        font-size: 28px;
+        margin-top: 20px;
+        padding: 10px;
     }
 
     .us .container .text-1 p {
         font-size: 16px;
+        margin-bottom: 30px;
     }
     /*fin nosotros*/
 
@@ -781,7 +779,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 100vh;
+        height: 80vh;
     }
 
     .analisis-sectorial .focus img {
@@ -799,18 +797,10 @@
 
     .container3 .text-4 .principal {
         font-size: 24px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-       padding: 0 20px 0 0;
+        margin-top: 30px;
     }
-
-    .container3 .columns {
-        flex-direction: column;
-    }
-
     .container3 .columns .textos {
         width: 100%;
-        margin-top: 5px;
     }
 
     .container3 .columns .textos h2 {
@@ -826,24 +816,36 @@
     }
     /*fin analisis sectorial*/
 
-    /*inicio servicios*/
+    /*inicio servicios*/ 
+    .services {
+        width: 100vw;
+        height: auto;
+    }    
     .container-2 {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-        gap: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        gap: 2rem;
+        width: 90%;
+        justify-items: center; /* Centrar elementos */
+    
     }
-
     .box {
-        max-width: 300px;
-        height: 250px;
+        max-width: 200px;
+        height: 200px; /* Tamaño inicial */
     }
-
-    /* Ajustamos la ubicación de los últimos 2 boxes */
+    /* Ubicación de los últimos 2 boxes en la fila inferior */
     .box:nth-child(4) {
-        grid-column: 1 / 2;
+        grid-column: 1 / 3; 
+        grid-row: 2 / 3;
     }
-
+    
     .box:nth-child(5) {
-        grid-column: 2 / 3;
+        grid-column: 2 / 4; 
+        grid-row: 2 / 3;
+    }
+    .box h2{
+        font-size: 1.5rem;
     }
     /*fin servicios*/
 
