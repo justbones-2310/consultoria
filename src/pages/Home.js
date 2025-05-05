@@ -4,21 +4,19 @@ import './../styles/pages/Home.css';
 
 const Home = (props) => {
 
-
     useEffect(() => {
         const comments = document.querySelectorAll('.comment');
         const observerComments = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
                 }
             });
         });
 
-        comments.forEach(comment => {
-            observerComments.observe(comment);
-        });
-
+        comments.forEach(comment => observerComments.observe(comment));
 
         const title = document.querySelector('.title');
         const button1 = document.querySelector('.button1');
@@ -31,21 +29,21 @@ const Home = (props) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
                 }
             });
         });
 
         if (title) observerServices.observe(title);
         if (button1) observerServices.observe(button1);
-        if (flipContainer) observerServices.observe(flipContainer)
-        if (flipContainer2) observerServices.observe(flipContainer2)
+        if (flipContainer) observerServices.observe(flipContainer);
+        if (flipContainer2) observerServices.observe(flipContainer2);
         if (focus) observerServices.observe(focus);
         if (container3) observerServices.observe(container3);
 
         return () => {
-            comments.forEach(comment => {
-                observerComments.unobserve(comment);
-            });
+            comments.forEach(comment => observerComments.unobserve(comment));
             if (title) observerServices.unobserve(title);
             if (button1) observerServices.unobserve(button1);
             if (flipContainer) observerServices.unobserve(flipContainer);
@@ -55,44 +53,17 @@ const Home = (props) => {
         };
     }, []);
 
-
-
-    const handleScrollToServices = () => {
-        document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
-    };
-
-
-
-    const handleBoxClick = (e) => {
-        const box = e.currentTarget;
-        const h2 = box.querySelector('h2');
-
-
-        // Verifica si el box ya está expandido
-        const isExpanded = box.classList.contains('expanded');
-
-        // Oculta cualquier box previamente expandido
-        document.querySelectorAll('.box').forEach(b => {
-            b.classList.remove('expanded');
-            b.querySelector('h2').style.opacity = '1'; // Restaura h2
-
-        });
-
-        if (!isExpanded) {
-            box.classList.add('expanded');
-            h2.style.opacity = '0'; // Oculta el h2
-        }
-    };
-
     useEffect(() => {
         const elementsToObserve = document.querySelectorAll(
-            '.tables, .tables .titulo, .tables .columns .textos'
+            '.tables, .tables .titulo, .tables .columns .textos, .container-2 .box'
         );
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
                 }
             });
         }, { threshold: 0.2 });
@@ -102,13 +73,33 @@ const Home = (props) => {
         return () => elementsToObserve.forEach(element => observer.unobserve(element));
     }, []);
 
+    const handleScrollToServices = () => {
+        document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const handleBoxClick = (e) => {
+        const box = e.currentTarget;
+        const h2 = box.querySelector('h2');
+
+        const isExpanded = box.classList.contains('expanded');
+
+        document.querySelectorAll('.box').forEach(b => {
+            b.classList.remove('expanded');
+            b.querySelector('h2').style.opacity = '1';
+        });
+
+        if (!isExpanded) {
+            box.classList.add('expanded');
+            h2.style.opacity = '0';
+        }
+    };
+
     const handleEmailClick = (event) => {
-        event.preventDefault(); // Evita que el enlace navegue directamente
+        event.preventDefault();
         const email = "jars@gmail.com";
         const subject = encodeURIComponent("Consulta sobre sus servicios");
         const body = encodeURIComponent("Hola, me gustaría obtener más información sobre sus servicios.");
 
-        // Abrir Gmail en una nueva ventana
         window.open(
             `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`,
             '_blank'
@@ -158,7 +149,7 @@ const Home = (props) => {
 
             </div>
 
-            <div className='comment'>
+            <div className='comment' id='nosotros'>
 
                 <h2>
                     Nos enfocamos en optimizar procesos y estrategias
@@ -170,7 +161,7 @@ const Home = (props) => {
 
 
 
-            <div className='us' id='nosotros'>
+            <div className='us'>
 
                 <div className='item' >
 
@@ -224,7 +215,7 @@ const Home = (props) => {
 
 
 
-            <div className='comment'>
+            <div className='comment' id='insights'>
 
                 <h2>
                     Dentro de tu empresa existen grandes oportunidades, pero no siempre son fáciles de identificar
@@ -234,7 +225,7 @@ const Home = (props) => {
 
 
 
-            <div className='questions-section' id='insights'>
+            <div className='questions-section' >
 
                 <h2>¿Te has preguntado...?</h2>
 
@@ -310,7 +301,7 @@ const Home = (props) => {
             </div>
 
 
-            <div className='comment'>
+            <div className='comment' id='services'>
 
                 <h2>
                     Utilizamos herramientas avanzadas para obtener insights valiosos
@@ -320,7 +311,7 @@ const Home = (props) => {
             </div>
 
 
-            <div className='services' id='services'>
+            <div className='services' >
                 <div className='container-2'>
                     <div className='box' onClick={handleBoxClick}>
                         <h2>Web Scraping</h2>
@@ -391,7 +382,7 @@ const Home = (props) => {
 
 
 
-            <div className='comment'>
+            <div className='comment' id='contacto'>
 
                 <h2>
                     Grandes logros siempre son el resultado de grandes esfuerzos
@@ -400,7 +391,7 @@ const Home = (props) => {
             </div>
 
 
-            <div className="contacto" id='contacto'>
+            <div className="contacto" >
 
 
                 <div className="contacto-info">
