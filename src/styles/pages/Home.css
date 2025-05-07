@@ -14,23 +14,21 @@
 /*inicio start*/
 .start {
     position: relative;
+    display: flex;
     top: 0;
     left: 0;
     width: 100%;
-    height: 90vh;
-    display: flex;
+    height: 60vh;
 }
 .bg-image1{
     flex: 1;
     width: 50vw; /* Cada imagen ocupa el 50% del ancho del viewport */
-    height: 100%;
     object-fit: cover;
     background-size: cover;
 }
 .bg-image2{
     flex: 1;
     width: 50vw; /* Cada imagen ocupa el 50% del ancho del viewport */
-    height: 100%;
     object-fit: cover;
     background-size: cover;
 }
@@ -38,27 +36,26 @@
     position: absolute;
     z-index: 2; /* Se asegura de que el texto y botón estén encima de las imágenes */
     width: 100%;
-    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 10px;
     color: white;
+    height: 100%;
 }
 .title {
-    margin-top: 20px;
-    margin-left: 40px;
-
+    margin-left: 10px;
 }
 .title h1 {
+    font-size: 3.2rem;
     text-transform: uppercase;
     letter-spacing: 4px;
     font-weight: 400;
 }
-.button {  
-    margin-top: 350px;
-    margin-left: 40px;
+.button { 
+    margin-left: 10px;
+    margin-bottom: 20px;
 }
 .button1 {
     background-color: white;
@@ -629,47 +626,20 @@
 }
 /*fin contacto*/
 
+@media (max-width: 768px) {
+    .bg-image2 {
+      display: none !important;
+    }
+}
 /* Media queries for mobile-first */
-/* Small devices (320px and up) */
-@media (min-width: 320px) {
-    /* Add your styles for 320px and up here */
+@media (min-width: 768px) {
     .bg-image2 {
         display: none;
-    }
-    .welcome {
-        padding: 20px;
-    }
-    .title {
-        margin-top: 50px;
-        margin-left: 10px;   
-    }
-    .title h1 {
-        font-size: 50px;
-        font-weight: 500;
-    }
-    .button {  
-        margin-left: 10px;
-    }
-    .button1 {
-        font-size: 16px;
-    }
-}
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    /* Add your styles for 576px and up here */
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    /* Add your styles for tablets and up here */
-    .bg-image2 {
-        display: block;
     }
     .welcome {
         padding: 10px 20px;
     }
     .title {
-        margin-top: 70px;
         margin-left: 10px;
     
     }
@@ -679,7 +649,6 @@
         font-weight: 700;
     }
     .button {  
-        margin-top: 200px;
         margin-left: 10px;
     }
 
@@ -906,18 +875,21 @@
 /* Extra large devices (large desktops, 1440px and up) */
 @media (min-width: 1024px) {
     /* Add your styles for 1440px and up here */
+    .bg-image2{
+        display: block;
+    }
     .start{
-        height: 100vh;
+        height: 90vh;
     }
     .title {
-        margin-top: 50px;
+        margin-left: 40px;
     }
     .title h1 {
         font-size: 4rem;
         letter-spacing: 6px;
     }
     .button {  
-        margin-top: 200px;
+        
         margin-left: 40px;
     }
     .button1 {
