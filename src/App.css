@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
   box-sizing: border-box;
   font-family: "Roboto Condensed", sans-serif; /* Cambiar 'serif' por 'sans-serif' */
@@ -10,7 +9,6 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
-
 body {
   background-color: white;
   color: black;
@@ -20,7 +18,6 @@ body {
   overflow-x: hidden;
   height: auto;
 }
-
 /* Preloader */
 .preloader {
   background-color: black;

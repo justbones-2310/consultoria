@@ -33,6 +33,7 @@
     width: 50vw; /* Cada imagen ocupa el 50% del ancho del viewport */
     object-fit: cover;
     background-size: cover;
+    height: 33em;
 }
 .welcome {
     position: absolute;
@@ -833,9 +834,6 @@
         font-weight: 500;
         letter-spacing: 6px;
     }
-    .welcome {
-        height: 80vh;
-    }
     .button {   
         margin-left: 40px;
     }
@@ -1044,15 +1042,9 @@
 /* Extra large devices (large desktops, 1440px and up) */
 @media (min-width: 1440px) {
     /* Add your styles for 1440px and up here */
-    .title {
-        margin-top: 80px;
-    }
     .title h1 {
         font-size: 60px;
         letter-spacing: 8px;
-    }
-    .welcome {
-        height: 100%;
     }
     /*inicio comment*/
     .comment h2 {
@@ -1067,14 +1059,11 @@
     .us .container .text-1 h2 {
         font-size: 36px;
         letter-spacing: 4px;
-        margin-top: 120px;
     }
-
     .us .container .text-1 p {
         font-size: 20px;
         margin-top: 40px;
     }
-
     .item .back h2 {
         font-size: 28px;
         padding: 0 40px;
@@ -1113,27 +1102,12 @@
     /*fin servicios*/
 }
 
-
 /* Ultra large devices (ultra wide screens, 2560px and up) */
 @media (min-width: 2560px) {
    /* Add your styles for 2560px and up here */
-   .start,
-   .bg-image1,
-   .bg-image2 {
-    height: auto;
-   }
-   .welcome{
-    height: 90%;
-   }
-    .title {
-        margin-top: 150px;
-    }
     .title h1 {
         font-size: 90px;
         letter-spacing: 10px;
-    }
-    .button {  
-        margin-top: 600px;
     }
     .button1 {
         font-size: 40px;
@@ -1148,10 +1122,12 @@
     /*inicio nosotros*/
     .us .container .text-1 h2 {
         font-size: 40px;
+        width: 50%;
     }
 
     .us .container .text-1 p {
         font-size: 22px;
+        width: 80%;
     }
 
     .item .back h2 {

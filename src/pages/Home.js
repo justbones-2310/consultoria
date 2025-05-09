@@ -149,6 +149,7 @@ const Home = (props) => {
 
             </div>
 
+
             <div className='comment' id='nosotros'>
 
                 <h2>
