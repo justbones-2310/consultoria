@@ -25,7 +25,7 @@
     width: 50%; /* Cada imagen ocupa el 50% del ancho del viewport */
     object-fit: cover;
     background-size: cover;
-    height: 32em;
+    height: 33em;
 }
 .bg-image2{
     display: none;
@@ -830,6 +830,7 @@
     }
     .title h1 {
         font-size: 4rem;
+        font-weight: 500;
         letter-spacing: 6px;
     }
     .welcome {
