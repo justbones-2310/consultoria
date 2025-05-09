@@ -1,19 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-* {
-    box-sizing: border-box;
-    font-family: "Roboto Condensed", serif;
-}
 
-body{
-  background-color: white; /* #fff;*/
-  color: black;
-  text-align: center;
-  max-width: 100%;
-  height: auto;
+* {
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif; /* Cambiar 'serif' por 'sans-serif' */
   margin: 0;
   padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: white;
+  color: black;
+  text-align: center;
+  min-width: 320px;
   position: relative;
   overflow-x: hidden;
+  height: auto;
 }
 
 /* Preloader */
@@ -23,7 +28,7 @@ body{
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,13 +110,13 @@ body{
 @media (min-width: 768px) {
   .jars{
     font-size: 50px;
-    font-weight: 400;
+    font-weight: 200;
   }
 }
 @media (min-width: 1024px) {
   .jars{
     font-size: 100px;
-    font-weight: 400;
+    font-weight: 200;
   }
 }
 
@@ -176,13 +181,13 @@ body{
 }
 
 /*animación de giro*/
-.us .flip-container {
+.us .item .flip-container {
   opacity: 0;
   transform: translateX(-100%);
   transition: transform 3s ease-out, opacity 1s ease-out;
 }
 
-.us .flip-container.visible {
+.us .item .flip-container.visible {
   transform: translateX(0);
   opacity: 1;
 }
@@ -198,9 +203,6 @@ body{
   transform: translateX(0);
   opacity: 1;
 }
-
-
-
 
 /*inicio whatsapp*/
 .whatsapp-button {

@@ -122,7 +122,7 @@ const Home = (props) => {
     ];
 
     return (
-        <div className='home'>
+        <main className='home'>
 
             <div className='start'>
 
@@ -443,7 +443,7 @@ const Home = (props) => {
                 <i className="bi bi-whatsapp"></i>
             </a>
 
-        </div>
+        </main>
     );
 }
 

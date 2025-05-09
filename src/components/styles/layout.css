@@ -1,3 +1,4 @@
+/*mobile first*/
 /*inicio nav*/
 .navbar {
     width: 100%;
@@ -107,7 +108,7 @@
 .toggle_btn_fixed:hover {
     background: #333;
 }
-
+/*mobile first*/
 
 @media (min-width: 1024px) {
         .menu-items {
@@ -136,7 +137,6 @@
         }
 }
 /*fin nav*/
-
 
 /*inicio footer*/
 footer {
