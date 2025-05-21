@@ -408,7 +408,6 @@ const Home = (props) => {
 
             <div className="contacto" >
 
-
                 <div className="contacto-info">
 
                     <div className="contacto-datos">
@@ -424,7 +423,9 @@ const Home = (props) => {
                             </a>
                         </p>
 
-                        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jos%C3%A9-lezama-8baa1049/" target="_blank" rel="noopener noreferrer">Perfil de LinkedIn</a></p>
+                        <p><strong>LinkedIn:</strong>
+                            <a href="https://www.linkedin.com/in/jos%C3%A9-lezama-8baa1049/" target="_blank" rel="noopener noreferrer">
+                                Perfil de LinkedIn</a></p>
 
                         <p>
                             <strong>Teléfono:</strong>
