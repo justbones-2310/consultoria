@@ -352,13 +352,13 @@ animation: slideUp 1s ease-out;
     .highlight{
         position: static;
     }
-    .highlight .fixed{
-        position: relative;
-    display: block;
-    width: 100%; 
-    object-fit: fixed;
-    background-size: cover;
-    height: 33em;
+    .fixed{
+  background-image: url('/public/images/fixed.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
     }
     .equipo-text-container .block h1{
         font-size: 3.5rem;
