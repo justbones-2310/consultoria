@@ -11,7 +11,6 @@ import Footer from './components/layout/Footer.js';
 import Home from './pages/Home';
 import Nosotros from './pages/Nosotros';
 import Soluciones from './pages/Soluciones';
-
 import Contacto from './pages/Contacto';
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
-
 
   return (
     <div className="App">

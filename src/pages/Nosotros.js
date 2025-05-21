@@ -79,8 +79,10 @@ const Nosotros = (props) => {
 
             <div className='nosotros-container'>
 
-                <img src='/images/IMG_2401.jpg' alt='Nosotros' className='nosotros-img' />
                 <img src='/images/equipo.jpg' alt='Nosotros' className='equipo-img' />
+
+                <img src='/images/IMG_2401.jpg' alt='Nosotros' className='nosotros-img' />
+
 
                 <div className='nosotros-text'>
 
