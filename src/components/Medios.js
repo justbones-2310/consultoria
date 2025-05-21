@@ -1,4 +1,3 @@
-import { useRef, useEffect, useState } from 'react';
 import './styles/layout.css';
 
 const Medios = () => {
@@ -51,73 +50,27 @@ const Medios = () => {
 
     // duplicar items para efecto loop visual
     const fullMedios = [...medios, ...medios];
-    const scrollRef = useRef(null);
-    const [isUserInteracting, setIsUserInteracting] = useState(false);
-
-    useEffect(() => {
-        let scrollInterval;
-        let interactionTimeout;
-        const container = scrollRef.current;
-
-        if (!container) return;
-
-        const startScrolling = () => {
-            scrollInterval = setInterval(() => {
-                if (!isUserInteracting && container) {
-                    container.scrollLeft += 0.5;
-                    if (container.scrollLeft >= container.scrollWidth / 2) {
-                        container.scrollLeft = 0;
-                    }
-                }
-            }, 16);
-        };
-
-        setTimeout(startScrolling, 300); // esperar a que cargue el DOM y CSS
-
-        const handleUserInteraction = () => {
-            setIsUserInteracting(true);
-            clearTimeout(interactionTimeout);
-
-            interactionTimeout = setTimeout(() => {
-                setIsUserInteracting(false);
-            }, 2000); // 2s sin interacción = retoma auto-scroll
-        };
-
-        const handleMouseEnter = () => setIsUserInteracting(true);
-        const handleMouseLeave = () => setIsUserInteracting(false);
-
-        container.addEventListener('scroll', handleUserInteraction);
-        container.addEventListener('mouseenter', handleMouseEnter);
-        container.addEventListener('mouseleave', handleMouseLeave);
-
-        return () => {
-            clearInterval(scrollInterval);
-            clearTimeout(interactionTimeout);
-            container.removeEventListener('scroll', handleUserInteraction);
-            container.removeEventListener('mouseenter', handleMouseEnter);
-            container.removeEventListener('mouseleave', handleMouseLeave);
-        };
-    }, [isUserInteracting]);
 
     return (
         <div className="notas-medios">
-
-            <div className="notas-container" ref={scrollRef}>
-                {fullMedios.map((medio, index) => (
-                    <div key={index} className="nota-item">
-                        <h2>{medio.titulo}</h2>
-                        <button
-                            className="btn-ver-nota"
-                            onClick={() => window.open(medio.enlace, '_blank')}
-                        >
-                            Ver Nota
-                        </button>
-                    </div>
-                ))}
+            <div className="notas-marquee">
+                <div className="notas-track">
+                    {fullMedios.map((medio, index) => (
+                        <div className="nota-item" key={index}>
+                            <h2>{medio.titulo}</h2>
+                            <button
+                                className="btn-ver-nota"
+                                onClick={() => window.open(medio.enlace, '_blank')}
+                            >
+                                Ver Nota
+                            </button>
+                        </div>
+                    ))}
+                </div>
             </div>
-
         </div>
     );
 };
+
 
 export default Medios;
