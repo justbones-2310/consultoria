@@ -61,8 +61,7 @@ const Medios = () => {
 
         if (!container) return;
 
-        // Esperar al siguiente frame para asegurar que se montó
-        requestAnimationFrame(() => {
+        const startScrolling = () => {
             scrollInterval = setInterval(() => {
                 if (!isUserInteracting && container) {
                     container.scrollLeft += 0.5;
@@ -70,8 +69,10 @@ const Medios = () => {
                         container.scrollLeft = 0;
                     }
                 }
-            }, 16); // ~60fps
-        });
+            }, 16);
+        };
+
+        setTimeout(startScrolling, 300); // esperar a que cargue el DOM y CSS
 
         const handleUserInteraction = () => {
             setIsUserInteracting(true);

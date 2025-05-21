@@ -158,7 +158,7 @@
     overflow-x: auto;
     width: 100%;
     height: 100%;
-    scroll-behavior: auto; /* sin smooth porque lo manejamos manualmente */
+    scroll-behavior: smooth; /* sin smooth porque lo manejamos manualmente */
     -webkit-overflow-scrolling: auto;
     scroll-snap-type: none;
 }
