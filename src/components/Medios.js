@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from 'react';
 import './styles/layout.css';
 
 const Medios = () => {
@@ -50,27 +51,67 @@ const Medios = () => {
 
     // duplicar items para efecto loop visual
     const fullMedios = [...medios, ...medios];
+    const scrollRef = useRef(null);
+    const animationRef = useRef(null);
+    const [isPaused, setIsPaused] = useState(false);
+
+    useEffect(() => {
+        const container = scrollRef.current;
+        if (!container) return;
+
+        let lastTimestamp = performance.now();
+
+        const scroll = (timestamp) => {
+            const delta = timestamp - lastTimestamp;
+            lastTimestamp = timestamp;
+
+            if (!isPaused) {
+                container.scrollLeft += delta * 0.05; // velocidad basada en tiempo
+                if (container.scrollLeft >= container.scrollWidth / 2) {
+                    container.scrollLeft = 0;
+                }
+            }
+
+            animationRef.current = requestAnimationFrame(scroll);
+        };
+
+        animationRef.current = requestAnimationFrame(scroll);
+
+        // Detener al interactuar
+        const handleInteractionStart = () => setIsPaused(true);
+        const handleInteractionEnd = () => setIsPaused(false);
+
+        container.addEventListener('mouseenter', handleInteractionStart);
+        container.addEventListener('mouseleave', handleInteractionEnd);
+        container.addEventListener('touchstart', handleInteractionStart);
+        container.addEventListener('touchend', handleInteractionEnd);
+
+        return () => {
+            cancelAnimationFrame(animationRef.current);
+            container.removeEventListener('mouseenter', handleInteractionStart);
+            container.removeEventListener('mouseleave', handleInteractionEnd);
+            container.removeEventListener('touchstart', handleInteractionStart);
+            container.removeEventListener('touchend', handleInteractionEnd);
+        };
+    }, [isPaused]);
 
     return (
         <div className="notas-medios">
-            <div className="notas-marquee">
-                <div className="notas-track">
-                    {fullMedios.map((medio, index) => (
-                        <div className="nota-item" key={index}>
-                            <h2>{medio.titulo}</h2>
-                            <button
-                                className="btn-ver-nota"
-                                onClick={() => window.open(medio.enlace, '_blank')}
-                            >
-                                Ver Nota
-                            </button>
-                        </div>
-                    ))}
-                </div>
+            <div className="notas-container" ref={scrollRef}>
+                {fullMedios.map((medio, index) => (
+                    <div className="nota-item" key={index}>
+                        <h2>{medio.titulo}</h2>
+                        <button
+                            className="btn-ver-nota"
+                            onClick={() => window.open(medio.enlace, '_blank')}
+                        >
+                            Ver Nota
+                        </button>
+                    </div>
+                ))}
             </div>
         </div>
     );
 };
-
 
 export default Medios;

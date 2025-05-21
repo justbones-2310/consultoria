@@ -144,33 +144,21 @@
 
 /* Carrusel con animación infinita CSS */
 .notas-medios {
-  overflow: hidden;
   width: 100%;
   background: #fff;
   padding: 2rem 0;
 }
-
-.notas-marquee {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.notas-track {
+.notas-container {
   display: flex;
-  width: max-content;
-  animation: scrollMarquee 60s linear infinite;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
-
-@keyframes scrollMarquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.notas-container::-webkit-scrollbar {
+  display: none;
 }
-
 .nota-item {
   background-color: whitesmoke;
   border: 1px solid #ddd;
