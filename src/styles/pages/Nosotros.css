@@ -341,6 +341,9 @@ animation: slideUp 1s ease-out;
         display: block;
         height: 25em;
     }
+    .sumate {
+
+    }
     .sumate h1{
         font-size: 4rem;
         font-weight: 500;

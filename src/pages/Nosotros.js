@@ -190,7 +190,7 @@ const Nosotros = (props) => {
 
                     <div className='box-container'>
                         <h6 className='focused-text'>
-                            El éxito no es un destino, es un camino que podemos recorrer juntos
+                            El éxito es un camino que podemos recorrer juntos
                         </h6>
 
                         <p className='block-ceo focused-text'> José Lezama Altuna <br></br> CEO y Fundador </p>
