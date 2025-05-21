@@ -45,9 +45,8 @@
     padding: 10px;
     color: white;
     height: 100%;
-}
-.title {
-    margin-left: 10px;
+    width: 100%;
+    padding: 2rem;
 }
 .title h1 {
     font-size: 3rem;
@@ -56,7 +55,6 @@
     font-weight: 400;
 }
 .button { 
-    margin-left: 10px;
     margin-bottom: 20px;
 }
 .button1 {
@@ -78,11 +76,10 @@
 /*Inicio comment*/
 .comment {
     width: 100%;
-    padding: 50px 0;
     letter-spacing: 4px;
     font-weight: 100;
-    text-transform: uppercase;
-    align-items: flex-start;
+    align-items: center;
+    padding: 2rem;
     transform: translateX(-100%);
     transition: transform 3s ease-out, opacity 1s ease-out;
     opacity: 0;
@@ -96,9 +93,6 @@
     font-weight: bold; 
     color: black; 
     text-transform: uppercase; 
-    letter-spacing: 4px;
-    text-align: left;
-    padding: 0 20px;
     text-align: center;
 }
 /*Fin comment */
@@ -602,20 +596,21 @@
 
 /*inicio contacto*/
 .contacto {
-    background-color: black;
+    background-color: #2c2c2c;
     color: white;
     padding: 30px 20px;
     width: 100%;
     height: auto;
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2rem;
 }
 .contacto h2 {
     font-size: 1.8rem;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 .contacto-info {
     display: flex;

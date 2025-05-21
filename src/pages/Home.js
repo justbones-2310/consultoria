@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { FaCheckCircle } from "react-icons/fa";
 import './../styles/pages/Home.css';
@@ -120,6 +121,19 @@ const Home = (props) => {
             descripcion: "Ofrecemos capacitación especializada para empresas, enfocada en áreas críticas como análisis de datos, permitiendo que el personal se mantenga actualizado en mejores prácticas."
         }
     ];
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state?.scrollTo) {
+            const element = document.getElementById(location.state.scrollTo);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 100); // le da tiempo al DOM a renderizar
+            }
+        }
+    }, [location]);
 
     return (
         <main className='home'>
@@ -302,7 +316,7 @@ const Home = (props) => {
             </div>
 
 
-            <div className='comment' id='services'>
+            <div className='comment' id='servicios'>
 
                 <h2>
                     Utilizamos herramientas avanzadas para obtener insights valiosos

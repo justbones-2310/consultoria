@@ -1,17 +1,395 @@
-h1 {
-    font-size: 10vh;
-    letter-spacing: 8px;
-}
-.nosotros .marca{
-    width: 100vw;
-    height: 100vh;
+/*MOBILE FIRST*/
+.equipo{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: #363636;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-top: 70px;
+}
+/*introducción*/
+.nosotros-container{
+    position: relative;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+.nosotros-img {
+    flex: 1;
+    width: 50%; 
+    object-fit: cover;
+    background-size: cover;
+    height: 23em;
+}
+.equipo-img{
+    display: none;
+    flex: 1;
+    width: 50%;
+    object-fit: cover;
+    background-size: cover;
+    height: 23em;
+}
+.nosotros-text {
+    position: absolute;
+    z-index: 2; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: left;
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+.sumate h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 0 2rem;
+}
+/*introducción*/
+
+/*apertura*/
+.equipo-text{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    width: 100%;
+    height: auto;
+}
+.responsive-text {
+    padding: 2rem;
+}
+.responsive-text h6{
+    padding: 2rem 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.highlight .impacto {
+    width: 100%; 
+    object-fit: cover;
+    background-size: cover;
+    height: 33em;
+}
+.highlight .fixed {
+    display: none;
+}
+.block {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    text-align: center;
+}
+.block.visible {
+    opacity: 1;
+    animation: bounceInUp 0.9s ease-out forwards;
+}
+@keyframes bounceInUp {
+    0% {
+        transform: translateY(60px) scale(0.9);
+    }
+    60% {
+        transform: translateY(-8px) scale(1.02);
+    }
+    80% {
+        transform: translateY(4px) scale(0.98);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+.block h1{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+    line-height: 3rem;
+    padding: 0 2rem;
+}
+/*apertura*/
+
+/*Comentarios*/
+.focused-text {
+    width: 100%;
+    letter-spacing: 4px;
+    font-weight: 100;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 3s ease-out, opacity 1s ease-out;
+    opacity: 0;
+}
+.focused-text.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+.focused-text h2{
+    font-size: 22px; 
+    font-weight: bold; 
+    color: black; 
+    text-transform: uppercase; 
+    letter-spacing: 4px;
+    text-align: left;
+    padding: 2rem;
+}
+.focused-text-right {
+    width: 100%;
+    letter-spacing: 4px;
+    font-weight: 100;
+    align-items: center;
+    padding: 0 2rem 2rem 2rem;
+    transform: translateX(100%);
+    transition: transform 3s ease-out, opacity 1s ease-out;
+    opacity: 0;
+}
+.focused-text-right.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+.focused-text-right h2{
+    font-size: 22px; 
+    font-weight: bold; 
+    color: black; 
+    text-transform: uppercase; 
+    letter-spacing: 4px;
+    text-align: right;
+}
+/*Comentarios*/
+
+/*mision-vision*/
+.mision-vision{   
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: left;
+    width: 100%;
+    height: auto;
+}
+.acordeon-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    width: 100%;
+    height: auto;
+    padding: 0 ;
+}
+.accordion-item {
+  width: 100%;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  border-bottom: 1px solid white;
+  padding: 2rem;
+  transition: background 0.3s ease;
+}
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.accordion-content {
+  margin-top: 0.5rem;
+  font-size: 16px;
+  color: white;
+}
+/* Iconos "+" y "-" */
+.plus-icon::before {
+  content: "+";
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+.accordion-item.open .plus-icon::before {
+  content: "-";
+  font-size: 30px;
+}
+/*mision-vision*/
+
+/*manager*/
+.manager-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #333;
+    color: white;
+    text-align: left;
+    width: 100%;
+    height: auto;
+}
+.manager-container .manager{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.manager-container h6{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.manager-container h6,
+.manager-container p{
+        padding: 2rem;
+}
+.block-ceo {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    text-align: center;
+}
+.block-ceo.visible {
+    opacity: 1;
+}    
+.manager-container .manager p{
+    font-size: 2rem;
+    text-align: left;
+    font-weight: 400;
+    line-height: 2.5rem;
+animation: slideUp 1s ease-out;
+}
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.manager-container .highlight {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantiene la forma cuadrada */
+    overflow: hidden;
+}
+.manager-container .manager-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre todo el contenedor sin deformarse */
+    display: block;
+}
+.cv-completo-link{
+    text-decoration: none;
     color: white;
 }
-.nosotros .marca h1{
-    font-weight: 100;
+.acordeon-container.extra-items .extra-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards; /* Animación */
 }
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/*manager*/
+
+/*medios*/
+.notes{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0 2rem;
+}
+/*medios*/
+/*MOBILE FIRST*/
+
+/*MEDIAQUERIES*/
+@media (min-width:720px){
+    .equipo-img{
+        display: block;    
+    }
+
+    .acordeon-container{
+        width: 100%;
+    }
+    .manager-container .highlight {
+        max-width: none; /* Puedes ajustar este valor si necesitas limitar el tamaño */
+        height: 33em;
+    }
+    .manager-container .manager-img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width:1024px){
+    .nosotros-img{
+        height: 25em;
+    }
+    .equipo-img{
+        display: block;
+        height: 25em;
+    }
+    .sumate h1{
+        font-size: 4rem;
+        font-weight: 500;
+        letter-spacing: 6px;
+    }
+    .highlight .impacto {
+        display: none;
+    }
+    .highlight{
+        position: static;
+    }
+    .highlight .fixed{
+        position: relative;
+    display: block;
+    width: 100%; 
+    object-fit: fixed;
+    background-size: cover;
+    height: 33em;
+    }
+    .equipo-text-container .block h1{
+        font-size: 3.5rem;
+    }
+    .mision-vision {
+        width: 100%;
+        overflow: hidden;
+    }
+    .mision-vision .focused-text h2{
+        font-size: 3.5rem;
+        letter-spacing: 0.5rem;
+    }
+    .focused-text h2,
+    .focused-text-right h2{
+        font-size: 30px;
+    }
+
+    .manager-container .manager {
+        flex-direction: row;
+        width: 100%;
+        padding: 0;
+        gap: 0;
+    }
+    .manager .box-container{
+        background: whitesmoke;
+        color: black;
+        width: 50%;
+    }
+    .manager .highlight .manager-img{
+        width: 100%;
+    }
+
+}
+/*MEDIAQUERIES*/

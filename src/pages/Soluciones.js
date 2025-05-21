@@ -1,4 +1,4 @@
-import './../styles/pages/Soluciones.css'
+
 
 const Soluciones = (props) => {
 

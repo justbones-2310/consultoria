@@ -59,6 +59,8 @@
     justify-content: center;
     width: 100%;
 }
+/* SUBMENU*/
+/*nosotros-contacto*/
 .navbar ul li a {
     text-decoration: none;
     color: black;
@@ -70,7 +72,38 @@
     font-size: 20px;
     transition: 0.3s;
 }
-
+/*nosotros-contacto*/
+.menu-items li ul.submenu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+    height: auto;
+    text-align: center;
+    padding: 0;
+}
+.menu-items li ul.submenu a{
+    font-size: 12px;
+    padding: 1rem;
+}
+.menu-items li ul.submenu a:hover {
+    font-size: 14px;
+}
+.menu-items li:hover ul.submenu {
+    display: flex;
+    width: 320px;
+}
+.submenu-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
 .navbar .toggle_btn {
     display: flex;
     position: fixed;
@@ -84,7 +117,6 @@
     z-index: 1100;
     margin-top: 5px;
 }
-
 .navbar.hidden + .toggle_btn {
     display: block; /* Muestra el botón cuando la navbar está oculta */
 }
@@ -108,7 +140,84 @@
 .toggle_btn_fixed:hover {
     background: #333;
 }
+/*navbar*/
+
+/*medios*/
+.notas-medios {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 ;
+  color: #000;
+  margin-bottom: 2rem;
+}
+/* Carrusel contenedor */
+.notas-container {
+    position: relative; 
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+    scroll-behavior: auto; /* sin smooth porque lo manejamos manualmente */
+    -webkit-overflow-scrolling: auto;
+    scroll-snap-type: none;
+}
+/* Estilo de los items */
+.nota-item {
+    background-color: whitesmoke;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    min-width: 300px;
+    min-height: 350px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.nota-item:hover {
+    transform: scale(1.05); /* Ampliar ligeramente al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+}
+.nota-item h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+.btn-ver-nota {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-ver-nota:hover {
+    background-color: black;
+}
+/* Ocultar el scroll bar en navegadores compatibles */
+.notas-container::-webkit-scrollbar {
+    display: none;
+}
+.notas-container {
+    -ms-overflow-style: none; /* Para Internet Explorer y Edge */
+    scrollbar-width: none; /* Para Firefox */
+}
 /*mobile first*/
+@media (min-width:720px){
+    .notas-container {
+     gap: 2rem;
+     padding: 0;
+     margin: 0;
+  }
+}
+
 
 @media (min-width: 1024px) {
         .menu-items {
@@ -125,10 +234,62 @@
         }
         .menu-items ul {
             display: flex;
+            list-style: none;
+            font-size: 0; /*IMPORTANTE: elimina el contenido por defecto*/
+            padding: 0; /*IMPORTANTE*/
         } 
         .menu-items li {
             padding: 0;
-        }  
+            display: inline-block;
+            position: relative;
+        } 
+        .menu-items li a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding: 20px 10px; /* Espaciado entre los elementos */
+        }
+        .menu-items .submenu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            background-color: rgba(255, 255, 255, 0.3); /* blanco transparente */
+            backdrop-filter: blur(10px); /* desenfoque */
+            -webkit-backdrop-filter: blur(10px); /* soporte Safari */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            padding: 10px 0;
+            width: 200px;
+            z-index: 10;
+        } 
+        .menu-items .submenu.open {
+            display: flex;
+        }
+        .submenu li{
+            width: 100%;
+            text-align: center;
+        }
+        .submenu li a {
+            color: black;
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            transition: all 0.3s ease;
+            padding: 1rem;
+            gap: 0;
+        }
+        .submenu li a:hover {
+            background-color: #363636;
+            color: white;
+        }
+        .menu-items li:hover .submenu {
+            display: block;
+        }
+
         .nav .toggle_btn {
             display: none; /* 🔥 Ocultar botón hamburguesa */
         }

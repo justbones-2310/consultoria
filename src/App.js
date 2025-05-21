@@ -11,7 +11,7 @@ import Footer from './components/layout/Footer.js';
 import Home from './pages/Home';
 import Nosotros from './pages/Nosotros';
 import Soluciones from './pages/Soluciones';
-import Actualizaciones from './pages/Actualizaciones';
+
 import Contacto from './pages/Contacto';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPreloader(false);
-    }, 5000); // Se da suficiente tiempo para ejecutar la animación
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -46,7 +46,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="nosotros" element={<Nosotros />} />
             <Route path="soluciones" element={<Soluciones />} />
-            <Route path="actualizaciones" element={<Actualizaciones />} />
+
             <Route path="contacto" element={<Contacto />} />
           </Routes>
         </BrowserRouter>
