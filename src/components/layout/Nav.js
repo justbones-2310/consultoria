@@ -41,7 +41,7 @@ const Nav = () => {
                     to="/"
                     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 >
-                    <img src="../images/favicon_logo_jars.png" className="logo" alt="Cargando..." />
+                    <img src="../images/favicon_logo_jars.png" className="logo" alt="Logo de jARS Consultoría Estratégica" />
                 </NavLink>
 
                 <ul className={`menu-items ${isOpen ? 'open' : ''}`}>
