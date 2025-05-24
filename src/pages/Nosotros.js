@@ -139,7 +139,7 @@ const Nosotros = (props) => {
                 <div className='focused-text'>
 
                     <h2>
-                        Ideamos, <br />Creamos y <br />Transformamos
+                        Ideamos, <br />Creamos y <br />Transformamos.
                     </h2>
 
                 </div>
