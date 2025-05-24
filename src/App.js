@@ -10,8 +10,6 @@ import Footer from './components/layout/Footer.js';
 
 import Home from './pages/Home';
 import Nosotros from './pages/Nosotros';
-import Soluciones from './pages/Soluciones';
-import Contacto from './pages/Contacto';
 
 function App() {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -43,9 +41,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="nosotros" element={<Nosotros />} />
-            <Route path="soluciones" element={<Soluciones />} />
-
-            <Route path="contacto" element={<Contacto />} />
           </Routes>
         </BrowserRouter>
         <Footer />
